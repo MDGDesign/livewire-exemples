@@ -7,6 +7,11 @@ use Illuminate\Database\QueryException;
 use Illuminate\Support\Collection;
 use Livewire\Component;
 
+/**
+    To manage the different instances of value an habitat can have
+    Modify or delete
+    See CreateHabitat for adding new habitats
+*/
 
 class HabitatTypes extends Component
 {
