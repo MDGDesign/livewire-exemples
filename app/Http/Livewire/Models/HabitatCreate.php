@@ -3,7 +3,7 @@
 namespace App\Http\Livewire\Models;
 
 use App\Models\Habitat;
-use App\Models\Earth;
+use App\Models\Planet;
 use LivewireUI\Modal\ModalComponent;
 
 /**
@@ -17,7 +17,7 @@ class HabitatCreate extends ModalComponent
     # The title in the modal
     public $title;
 
-    public $id;
+    public $planet_id;
 
     public $rules = [
         "habitat_type"    => "required|regex:/^[\pL\s\-']+$/u|unique:habitats,type|max:50"
@@ -36,9 +36,9 @@ class HabitatCreate extends ModalComponent
             "type"  => ucfirst( strtolower( $this->habitat_type )),
         ]);
 
-        if( $this->id )
+        if( $this->planet_id )
         {
-            Earth::find( $this->id )->habitats()->attach( $habitat->id );
+            Planet::find( $this->planet_id )->habitats()->attach( $habitat->id );
             # main view
             $this->emit( "updateHabitats", $habitat->id );
         }else{
