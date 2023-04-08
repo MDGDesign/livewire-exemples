@@ -1,5 +1,3 @@
-<?php
-
 <div class="form-row auto-grid-placement">
     <x-form.field class="col-span-full">
         <div class="flex">
