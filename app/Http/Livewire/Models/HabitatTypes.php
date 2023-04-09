@@ -77,6 +77,7 @@ class HabitatTypes extends Component
   
   
     # The updated() method runs before the updatedHabitats()
+    # Probably simpler in a one property component context
    /* public function updated( $full_key, $value )
     {
         # dd( $full_key, $value ); # => habitats.0.type, the current value updated
@@ -90,7 +91,7 @@ class HabitatTypes extends Component
 
   
   
-    # Same as updated() method except for the parameter order and the $key
+    # Same as updated() method except for the parameters order and the $key value are different
     public function updatedHabitats( $type_value, $key )
     {
         # dd( $type_value, $key ); # => the current value updated, 0.type
